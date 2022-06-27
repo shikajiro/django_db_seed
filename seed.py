@@ -25,4 +25,4 @@ class Seed:
     def to_json(self):
         self._parse_csv()
         with open(self.json, "w") as f:
-            json.dump(self.data, f, indent=4)
+            json.dump(self.data, f, indent=4, ensure_ascii=False)
