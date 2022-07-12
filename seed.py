@@ -6,7 +6,7 @@ from args import ARGS
 class Seed:
     def __init__(self, csv=None, model=None, json=None):
         csv = csv or ARGS.csv
-        df = pd.read_csv(csv)
+        df = pd.read_csv(csv, dtype=str)
         df = df.where((pd.notnull(df)), None)
         self.records = df.to_dict("records")
         self.model = model or ARGS.model
